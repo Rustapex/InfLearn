@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>arrow Function</title>
+  </head>
+  <body>
+    <script>
+      /* 반복되는 코드 떄문에 나온 축약 문법 -- arrow function */
+
+      /* 함수 표현식
+        var logText = function(){
+        console.log('hi');} 
+         */
+        /* arrow function으로 표현한 함수 표현식*/
+      var logText = () => {
+        console.log("hi");
+      };
+      logText;
+      /* arrow function으로 표현한 함수 표현식2*/
+      var logText2 = ( )=>{
+        return 'a';
+      }
+      logText2();
+      /* arrow function으로 표현한 함수 표현식3*/
+      let logMessage = () => 'A';
+      logMessage();
+            
+      let logNumber = (num) => {
+        return num;
+      }
+      logNumber(1);
+      /* 괄호 없어도 됌 매개변수 하나일때만 가능 */
+      let logNumber2 = num => {
+        return num
+      }
+      let logNumber3 = num => num;
+      logNumber3(1); /* 1 출력 */ 
+
+      () => 10 + 20; /* {} 중괄호 필요 없음 */
+
+
+
+
+
+    </script>
+  </body>
+</html>

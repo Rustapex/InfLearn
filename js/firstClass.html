@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        url(https://developer.mozilla.org/en-US/docs/Glossary/First-class_Function)
+        => 일급 함수 정보 참고
+        함수 선언문
+        function logText(){
+        console.log('hi');}
+
+        함수 표현식
+        var logText = function(){
+        console.log('hi');} 
+         */
+
+         function logText(message){
+            message();
+         }
+         /* logText 함수 안에 인자로 넘긴 값이 함수 */
+         logText(function(){
+            console.log('hi');
+         });
+         /* 변수가 할당 될 수 있는 모든 곳에서 함수가 동일하게 사용될 수 있다.
+         활용 - 객체에 속성 값 연결 , 속성에 함수를 연결 */
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,15 @@
+package variable;
+
+public class var5 {
+    public static void main(String[] args) {
+
+        // 1. 변수 선언, 초기화 따로
+        int a;
+        a=1;
+        System.out.println(a);
+
+        int c=3, d=4;
+        System.out.println(c);
+
+    }
+}

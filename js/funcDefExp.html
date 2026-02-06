@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 함수 선언문 표현 방식(지향) */
+        // function logText(){
+        //     console.log('hi');
+        // }
+
+  
+        let logText = function(){
+            console.log('hi');
+        }
+        function logTextSec(message){
+            return message;
+        }   
+        logTextSec(100); /* '100' 반환 */
+
+        /* 일급 함수(first-class function) :  함수를 변수에 할당, 인자 전달, 반환 값으로 
+        사용할 수 있는 특성을 가진 프로그래밍 언어의 기능을 의미 */
+
+        function logTextThi(message){
+            return message;
+        }  
+        let a = message();
+        
+
+
+    </script>
+    
+    
+</body>
+</html>
