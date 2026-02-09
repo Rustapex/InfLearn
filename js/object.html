@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>object 객체</title>
+</head>
+<body>
+    <script>
+        let obj ={ /* 객체 */
+            a : 10 /* key(속성) : value(속성값) */
+        };
+        // obj = {a : 10} , 
+        obj.b = 20; 
+        console.log(obj.a + " - a ," + obj.b + " -b" );
+    </script>
+
+    <script> /*  객체의 축약 문법 */
+        let obj={a:10}; /* 객체 안 a : 속성 a */
+        let a = 10;  /* 변수 a 와 객체는 다른 것 */
+
+        let b = 20;
+        let obj2 = { b:b}; /* 속성b에 속성값 b 넣기, b=20, 속성 b에 20  */
+        conosle.log(obj.b + ": 변화된 b 값")
+
+        let c= 30; /*  객체 리터럴 (Enhanced Object Literal) */
+        let obj3 = {c}; /* obj3 = { c:c }; 를 축약한 형태 */
+
+    </script>
+    
+    <script>
+        /* 속성에 함수를 정의할 떄에 function 예약어 생략 */
+
+        const josh = {
+            coding: function(){
+                console.log('Hello javascript'); /* first class function 특징 */
+            }
+        };
+        josh.coding(); /* console.log('Hello javascript'); 출력 */
+
+        let capt = {
+            coding() { /*function 생략 가능 */
+                console.log('코딩');
+            }
+        };
+        capt.coding(); /*  위에랑 같은 의미 */
+    </script>
+</body>
+</html>

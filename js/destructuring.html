@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>구조 분해 문법(destructuring)</title>
+</head>
+<body>
+    <script>
+  let arr = ["apple", 10];
+
+  // ✅ 기존 방식(인덱스로 직접 꺼내기)
+  let favoriteFrust = arr[0]; // arr의 0번째 요소("apple")를 변수에 저장
+  console.log(favoriteFrust);
+
+  let myNumber = arr[1]; // arr의 1번째 요소(10)를 변수에 저장
+  console.log(myNumber);
+
+  // ✅ 배열 디스트럭처링(Destructuring)
+  // - 오른쪽 배열(arr)의 요소를 순서대로 꺼내서
+  //   왼쪽 변수들(myFruit, myNum)에 각각 대입
+  // - myFruit = arr[0], myNum = arr[1] 과 동일한 의미
+  // ⚠️ 주석에 "새로운 배열 선언"이라고 되어있는데, 실제로는 "새로운 배열"이 아니라
+  //    "새 변수들을 선언"하는 것임 (배열을 새로 만드는 게 아님)
+  let [myFruit, myNum] = arr; /* 새로운 변수 선언 후 기존 배열의 요소로 초기화 */
+  console.log(myFruit); // "apple"
+  console.log(myNum);   // 10
+</script>
+
+<script>
+  let josh = {
+    skill: "js",
+    age: 24,
+  };
+
+  // ✅ 기존 방식(프로퍼티로 직접 꺼내기)
+  let mySkill = josh.skill; // 객체 josh의 skill 값을 변수에 저장
+  console.log(mySkill);
+
+  let myAge = josh.age; // 객체 josh의 age 값을 변수에 저장
+  console.log(myAge);
+
+  // ✅ 객체 디스트럭처링(Destructuring)
+  // - 객체는 "순서"가 아니라 "키 이름"으로 꺼냄
+  // - skill = josh.skill, age = josh.age 와 같은 의미
+  let { skill, age } = josh;
+  /* let skill = josh.skill
+     let age = josh.age */
+  console.log(skill); /* 'js' */
+  console.log(age); // 24
+</script>
+
+<script>
+  let Isa = {
+    skill: "HTML",
+    age: 22
+  };
+
+  /* let herSkill = Isa.skill; let myAge = Isa.age; */
+
+  // ✅ 객체 디스트럭처링 + 이름 바꾸기(별칭/alias)
+  // - skill 값을 herSkill이라는 새 변수명으로 받음
+  // - age 값을 herAge라는 새 변수명으로 받음
+  // 즉, herSkill = Isa.skill / herAge = Isa.age
+  let { skill: herSkill, age: herAge } = Isa;
+
+  console.log(herSkill); /* HTML */
+
+  // ⚠️ 참고: 위 방식은 "변수명 skill을 만드는 게 아니라"
+  //    "herSkill" 변수를 만드는 것임. (skill이라는 변수는 여기서 선언되지 않음)
+  // console.log(skill); // ReferenceError (만약 실행하면 에러)
+</script>
+<script>
+    let Parco = {
+        location : "Seoul",
+        area : "10000m^2"
+    };
+    /* let{location , area} = Parco;
+        이 부분이 있으면 console.log(location); 가능*/
+    let {location : myLocation, area : myArea} = Parco;
+    console.log(myLocation);
+    console.log(myArea);
+
+</script>
+
+
+    
+</body>
+</html>
