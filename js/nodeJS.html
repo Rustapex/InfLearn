@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>nodejs</title>
+  </head>
+  <body>
+    <script>
+      // 공통 기본 입력 백준 node.js
+      const fs = require("fs");
+      const input = fs.readFileSync(0, "utf8").toString().trim(); // 0 = stdin
+
+      // 한 줄에 숫자 여러 개(2개)
+      const fs = require("fs");
+      const [A, B] = fs.readFileSync(0, "utf8").trim().split(/\s+/).map(Number);
+
+      // N개 숫자 목록(배열로 받기)
+      const fs = require("fs");
+      const TOKENS = fs.readFileSync(0, "utf8").trim().split(/\s+/).map(Number);
+
+      const Num = TOKENS[0];
+      const arr = TOKENS.slice(1); // 나머지 N개가 배열
+
+      // “한 줄씩 의미가 다른” 입력 (라인 기반 파싱)
+      const fs = require("fs");
+      const lines = fs.readFileSync(0, "utf8").trim().split("\n");
+
+      const Num2 = Number(lines[0]);
+      for (let i = 1; i <= N; i++) {
+        const [a, b] = lines[i].trim().split(" ").map(Number);
+        // a, b 사용
+      }
+
+      // 토큰 인덱스 방식(가장 범용 / 실수 줄이기)
+      const fs = require("fs");
+      const token = fs.readFileSync(0, "utf8").trim().split(/\s+/);
+      let idx = 0;
+
+      const Number1 = Number(token[idx++]); // 하나 읽고 idx 증가
+      const Alapha = Number(token[idx++]); // 다음 값
+
+      // 문자열/공백 포함 입력 (그대로 한 줄 받기)
+      const fs = require("fs");
+      const line = fs.readFileSync(0, "utf8").trim(); // 공백 포함 문자열 한 줄
+    </script>
+  </body>
+</html>
