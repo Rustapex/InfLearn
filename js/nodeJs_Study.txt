@@ -1,0 +1,26 @@
+const fs = require("fs");
+const tokens = fs.readFileSync(0, "utf8").trim().split(/\s+/);
+
+
+/*첫번째 입력 테스트 케이스 개수 tokens[0], 
+두번째 입력~ 마지막  각 문자열의 첫글자 마지막글자 를 합쳐 출력*/
+
+let idx=0;
+const T = Number(tokens[idx++]);
+// const newTokens =tokens.slice(1);
+
+/*newTokens[0] = "ACDKJFOWIEGHE"
+newTokens[1] = O
+newTokens[2] = AB*/
+
+let out = [];
+for(let i=0; i<T; i++){
+  let s = tokens[idx++];
+  let first = s[0]
+  let last = s[s.length-1];
+  out.push(`${first}${last}`);
+}
+console.log(out.join("\n"));
+
+
+
