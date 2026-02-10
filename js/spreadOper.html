@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>spread operator</title>
+</head>
+<body>
+    <script>
+        /* 스프레드 오버레이터(객체) */
+        let obj= {a:10, b:20};
+        let user1 =  {a:obj.a, b:obj.b};
+        let user2 = { a:obj.a, b:obj.b,c:30};
+
+        let user = {
+            ...obj, /* obj 안에 있는 a:10, b:20 그대로 들고 옴 */
+            c:30};
+    </script>
+    <script>
+        /* 스프레드 오버레이터(배열) */
+        let arr=['a', 'b'];
+        let newArr = [arr[0], arr[1]];
+
+        let newArr2 = [...arr, 'c']; /* arr 안에 있는 'a', 'n' 그대로 들고 옴 */
+        console.log(newArr2.join('\n'));
+    </script>
+    
+</body>
+</html>
