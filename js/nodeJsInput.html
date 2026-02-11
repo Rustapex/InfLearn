@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const fs = require("fs");
+      const lines = fs.readFileSync(0, "utf8").split("\n");
+
+      /*trim() 안쓰는 이유 - 공백, tab, \n 모두 없애버리니 지금 입력에서 
+      공백도 입력 받기에 위험할 수 있음 그래서 split으로 개행일때 나누기 */
+
+      process.stdout.write(lines.join("\n"));
+
+      /*기본 형식 process.stdout.write() - console.log 보다 저수준 process.stdout.write(chunk[, encoding][, callback])
+      ✅ chunk
+      출력할 내용
+        보통 문자열(string) 또는 Buffer(바이너리)
+        ✅ encoding (선택)
+        chunk가 문자열일 때 인코딩 지정
+        기본은 보통 'utf8'
+        예: 'utf8', 'ascii', 'base64' 등
+        ✅ callback (선택)
+        실제로 출력이 완료(버퍼에 기록)된 뒤 호출되는 함수
+
+        반환값
+        const ok = process.stdout.write("Hello");
+        반환값은 boolean
+
+        true : 내부 버퍼가 아직 여유 있음 (계속 써도 괜찮음)
+        false : 내부 버퍼가 꽉 참 → 너무 빠르게 많이 쓰고 있음 (백프레셔)
+        대부분 알고리즘 문제에서는 출력량이 적어서 신경 안 써도 되지만, 로그를 엄청 찍는 프로그램이면 의미가 있어요.
+
+        console.log 와 차이
+        자동 개행 O - console.log
+        x - process.stdout.write
+
+
+        */
+    </script>
+  </body>
+</html>
