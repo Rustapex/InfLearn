@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>객체에 key를 통한 value 접근</title>
+  </head>
+  <body>
+    <script>
+      const snack = {
+        name: "MatDongSan",
+        maker: "HaeTaeh",
+        weight: 200,
+        price: 3500,
+      };
+      /*1. ✨ 점 표기법(dot notation) */
+      console.log(snack.name);
+      console.log(snack.price);
+      /* 가장흔하고, 읽기 쉬움
+        but key가 식별자 규칙 만족할 때 가능(공백 하이픈 숫자시작 등 불가) */
+
+      /* 2. ✨ 대괄호 표기법 */
+      const key = "price";
+      console.log(snack[key]);
+      /* key가 문자열이면 전부 가능(공백 특수문자 포함)
+        변수로 키를 선택할 때에 필수 */
+
+      /* 3.✨  동적 키 + 안전 접근(없을 때 대비) */
+      const key2 = "unknown";
+      console.log(snack[key]); /* undefined(error 아님) */
+
+      /* 4.✨ optional chaining(없으면 undefined) */
+      console.log(snack?.name); /* "MatDongSan" */
+      console.log(snack?.info?.weight); /* undefined (중간에 없으면 멈춤) */
+
+      /* 두번째 거 다시 검색하기 */
+
+      /* 5.✨ 구조 분해 할당(destructuring) - 이거 진짜 자주 나오는듯 */
+      const { name, price } = snack;
+      console.log(name);
+      console.log(price);
+      /* 여러 번 접근 시 깔끔
+        같은 값 여러 번 쓰면 코드가 짧아짐 */
+
+      /* 6. ✨ 키 목록으로 순회 */
+
+      for (const key in snack) {
+        console.log(key, snakc[key]);
+      }
+      /* 상속된 property도 포함될수 있어 주의 
+        보통은 아래 방식이 안전*/
+      for (const key of object.keys(snack)) {
+        console.log(key, snack[key]);
+      }
+
+      // 7. ✨값 / 엔트리로 순회
+      object.values(snack); /* ["맛동산", "해태", 200, 3500] */
+      object.entries(snack); /* [["name","맛동산"], ...] */
+
+      /* 프로퍼티 존재 확인 */
+      "name" in snack; // true (상속 포함)
+      snack.hasOwnProperty("name"); // true (구식이지만 많이 봄)
+      Object.hasOwn(snack, "name"); // ✅ 최신/권장
+
+      /* 8.✨ getter 로 가져오기(거의 안씀, 학습용) */
+      Object.getOwnPropertyDescriptor(snack, "name")?.value
+
+
+      /* 효율 순위
+      대부분 코테, 웹 개발에서는 차이x
+      선택 기준 가독성 + 상황 적합성
+      
+      실전에서의 추천
+
+        키가 고정이고 정상적인 이름이면 → snack.name (가장 많이 씀)
+
+        키가 변수로 들어오거나 특수문자 키면 → snack[key] / snack["weird-key"]
+
+        여러 속성을 자주 쓸 때 → const {name, price} = snack (깔끔)*/
+
+    </script>
+  </body>
+</html>
