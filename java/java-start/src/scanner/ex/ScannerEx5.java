@@ -1,0 +1,32 @@
+package scanner.ex;
+import java.util.*;
+
+public class ScannerEx5 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("첫 번째 숫자를 입력하세요: ");
+        int num1 = Integer.parseInt(sc.nextLine());
+        System.out.print("두 번째 숫자를 입력하세요: ");
+        int num2 = Integer.parseInt(sc.nextLine());
+
+        if(num1 > num2){
+            num1 = num1 ^ num2;
+            num2 = num1 ^ num2; // num1^num2^num2 = num1
+            num1 = num1 ^ num2; // num1^num2^num1 = num2
+        }
+
+        String intRes ="";
+
+        for(int i =num1; (i <= num2); i++){
+            if(intRes.isEmpty()) {
+                intRes += i;
+            }
+            else{
+                intRes +=  ", " + i;
+            }
+        }
+        System.out.println("두 숫자 사이의 모든 정수 : " + intRes);
+
+
+    }
+}
