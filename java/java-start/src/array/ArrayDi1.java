@@ -1,26 +1,15 @@
 package array;
-import java.util.Arrays;
 
-public class ArrayDi0 {
+public class ArrayDi1 {
     public static void main(String[] args) {
         int[][] arr = new int[2][3];
 
-        /* 1번
-        arr[0][0] = 1;
-        arr[0][1] = 2;
-        arr[0][2] = 3;
-        arr[1][0] = 2;
-        arr[1][1] = 4;
-        arr[1][2] = 6;*/
-
-        /*2번
-
-        int [][] arr = {
-            {1,2,3},
-            {4,5,6}
-        };
-
-        */
+        int i=1;
+        for(int row =0; row < arr.length; row++){
+            for(int column =0; column < arr[row].length; column++){
+                arr[row][column] = i++;
+            }
+        }
 
         for(int i=0; i<arr.length; i++){
             for(int j=0; j<arr[i].length; j++){
